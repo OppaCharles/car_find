@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "278603931501",
+    "firebase_url": "https://car-find-f0681-default-rtdb.firebaseio.com",
+    "project_id": "car-find-f0681",
+    "storage_bucket": "car-find-f0681.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278603931501:android:1e9e2a60a759e7d4324464",
+        "android_client_info": {
+          "package_name": "com.example.car_find"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBmNcZcvNqfBTf_GhwMxJv9ysQFWYhAJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
