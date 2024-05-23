@@ -1,8 +1,13 @@
-import 'package:car_find/components/my_text_field.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:car_find/services/database_service.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:image_picker/image_picker.dart';
+
+import 'package:car_find/components/my_text_field.dart';
 
 class AddPostScreen extends StatefulWidget {
+  const AddPostScreen({super.key});
+
   @override
   State<AddPostScreen> createState() => _AddPostScreenState();
 }
@@ -18,7 +23,10 @@ class _AddPostScreenState extends State<AddPostScreen> {
   final TextEditingController _noTelpController = TextEditingController();
   final TextEditingController _negaraController = TextEditingController();
 
-  Future<void> _postToFirestore() async {
+  // Image yang akan dipilih
+  XFile? _imageFile;
+
+  Future<void> _postToFirestore(String? imageUrl) async {
     // Trim seluruh text dari controller
     String nama = _namaController.text.trim();
     String brand = _brandController.text.trim();
@@ -57,6 +65,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
           'kota': kota,
           'noTelp': noTelp,
           'negara': negara,
+          'imageUrl': imageUrl,
           'timestamp': FieldValue.serverTimestamp(),
         });
 
@@ -78,6 +87,16 @@ class _AddPostScreenState extends State<AddPostScreen> {
     }
   }
 
+  Future<void> _pickImage() async {
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = pickedFile;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,6 +109,36 @@ class _AddPostScreenState extends State<AddPostScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(
+                  height: 250,
+                  child: _imageFile != null
+                      ? Image.network(
+                          _imageFile!.path,
+                          fit: BoxFit.cover,
+                        )
+                      : Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 1,
+                              color: Colors.black,
+                            ),
+                          ),
+                          child: const Center(child: Text('No Image')),
+                        )),
+              //
+              //
+              const SizedBox(height: 18.0),
+              //
+              //
+              TextButton(
+                onPressed: _pickImage,
+                child: const Text("Pick Image"),
+              ),
+              //
+              //
+              const SizedBox(height: 18.0),
+              //
+              //
               MyTextField(
                   controller: _namaController,
                   hintText: 'Nama',
@@ -132,7 +181,15 @@ class _AddPostScreenState extends State<AddPostScreen> {
               //
               //
               ElevatedButton(
-                onPressed: _postToFirestore,
+                onPressed: () async {
+                  String? imageUrl;
+                  if (_imageFile != null) {
+                    imageUrl = await DatabaseService.uploadImage(_imageFile!);
+                  } else {
+                    imageUrl = '';
+                  }
+                  _postToFirestore(imageUrl);
+                },
                 child: const Text('Post'),
               ),
             ],
