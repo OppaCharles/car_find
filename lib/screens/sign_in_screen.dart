@@ -1,3 +1,4 @@
+import 'package:car_find/components/my_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -26,25 +27,19 @@ class SignInScreenState extends State<SignInScreen> {
           child: Column(
             children: [
               const SizedBox(height: 32.0),
-              TextField(
+              MyTextField(
                 controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
-                ),
+                hintText: 'Email',
+                obscureText: false,
               ),
-              const SizedBox(height: 16.0),
-              TextField(
+              MyTextField(
                 controller: _passwordController,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
-                ),
+                hintText: 'Password',
                 obscureText: true,
               ),
               //
               //
-              const SizedBox(height: 16.0),
+              const SizedBox(height: 24.0),
               //
               //
               ElevatedButton(

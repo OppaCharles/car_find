@@ -90,17 +90,42 @@ class _AddPostScreenState extends State<AddPostScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              MyTextField(controller: _namaController, hintText: 'Nama'),
-              MyTextField(controller: _brandController, hintText: 'Brand'),
-              MyTextField(controller: _modelController, hintText: 'Model'),
-              MyTextField(controller: _tahunController, hintText: 'Tahun'),
-              MyTextField(controller: _warnaController, hintText: 'Warna'),
               MyTextField(
-                  controller: _jalanController, hintText: 'Jalan Dealer'),
-              MyTextField(controller: _kotaController, hintText: 'Kota Dealer'),
+                  controller: _namaController,
+                  hintText: 'Nama',
+                  obscureText: false),
               MyTextField(
-                  controller: _noTelpController, hintText: 'Nomor Telepon'),
-              MyTextField(controller: _negaraController, hintText: 'Negara'),
+                  controller: _brandController,
+                  hintText: 'Brand',
+                  obscureText: false),
+              MyTextField(
+                  controller: _modelController,
+                  hintText: 'Model',
+                  obscureText: false),
+              MyTextField(
+                  controller: _tahunController,
+                  hintText: 'Tahun',
+                  obscureText: false),
+              MyTextField(
+                  controller: _warnaController,
+                  hintText: 'Warna',
+                  obscureText: false),
+              MyTextField(
+                  controller: _jalanController,
+                  hintText: 'Jalan Dealer',
+                  obscureText: false),
+              MyTextField(
+                  controller: _kotaController,
+                  hintText: 'Kota Dealer',
+                  obscureText: false),
+              MyTextField(
+                  controller: _noTelpController,
+                  hintText: 'Nomor Telepon',
+                  obscureText: false),
+              MyTextField(
+                  controller: _negaraController,
+                  hintText: 'Negara',
+                  obscureText: false),
               //
               //
               const SizedBox(height: 64.0),
