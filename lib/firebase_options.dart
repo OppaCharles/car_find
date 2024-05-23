@@ -90,4 +90,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'car-find-f0681.appspot.com',
     measurementId: 'G-6RCFJZW9GH',
   );
+
 }
