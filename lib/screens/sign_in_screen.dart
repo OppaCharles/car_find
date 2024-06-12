@@ -1,3 +1,4 @@
+import 'package:car_find/screens/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -5,7 +6,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:car_find/components/my_text_field.dart';
 import 'package:car_find/screens/sign_up_screen.dart';
-import 'package:car_find/screens/home_screen.dart';
 
 final googleSignIn = GoogleSignIn(
   scopes: [
@@ -45,7 +45,7 @@ class SignInScreenState extends State<SignInScreen> {
 
         if (mounted) {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const HomeScreen()),
+            MaterialPageRoute(builder: (context) => const BottomNav()),
           );
         }
       }
@@ -124,7 +124,7 @@ class SignInScreenState extends State<SignInScreen> {
                       );
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (context) => const HomeScreen()),
+                            builder: (context) => const BottomNav()),
                       );
                     } catch (error) {
                       ScaffoldMessenger.of(context).showSnackBar(

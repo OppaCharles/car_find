@@ -67,6 +67,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
           'negara': negara,
           'imageUrl': imageUrl,
           'timestamp': FieldValue.serverTimestamp(),
+          'likes': [],
         });
 
         if (mounted) {
@@ -102,9 +103,10 @@ class _AddPostScreenState extends State<AddPostScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Post'),
+        backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

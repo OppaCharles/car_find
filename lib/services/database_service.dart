@@ -37,18 +37,18 @@ class DatabaseService {
       return snapshot.docs.map((doc) {
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
         return Car(
-          nama: data['nama'],
-          brand: data['brand'],
-          model: data['model'],
-          tahun: data['tahun'],
-          warna: data['warna'],
-          jalan: data['jalan'],
-          kota: data['kota'],
-          noTelp: data['noTelp'],
-          negara: data['negara'],
-          imageUrl: data['imageUrl'],
-          timestamp: data['timestamp'],
-        );
+            nama: data['nama'],
+            brand: data['brand'],
+            model: data['model'],
+            tahun: data['tahun'],
+            warna: data['warna'],
+            jalan: data['jalan'],
+            kota: data['kota'],
+            noTelp: data['noTelp'],
+            negara: data['negara'],
+            imageUrl: data['imageUrl'],
+            timestamp: data['timestamp'],
+            likes: List<String>.from(data['likes'] ?? []));
       }).toList();
     });
   }

@@ -1,4 +1,5 @@
 import 'package:car_find/firebase_options.dart';
+import 'package:car_find/screens/bottom_nav.dart';
 import 'package:car_find/screens/home_screen.dart';
 import 'package:car_find/screens/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -21,15 +22,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Car Find',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-        useMaterial3: true,
-      ),
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const HomeScreen();
+            return const BottomNav();
           } else {
             return const SignInScreen();
           }

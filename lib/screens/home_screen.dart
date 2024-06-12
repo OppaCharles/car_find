@@ -1,3 +1,4 @@
+import 'package:car_find/screens/detail_screen.dart';
 import 'package:car_find/services/database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -67,7 +68,14 @@ class HomeScreen extends StatelessWidget {
                               )
                             : Container(),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetailScreen(car: document)),
+                            );
+                          },
                           title: Text(document.nama),
                           subtitle: Text(document.model),
                         ),
@@ -78,19 +86,6 @@ class HomeScreen extends StatelessWidget {
               );
           }
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddPostScreen()),
-          );
-        },
-        backgroundColor: Colors.black,
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
       ),
     );
   }

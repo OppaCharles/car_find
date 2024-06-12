@@ -13,6 +13,7 @@ class Car {
   final String negara;
   String? imageUrl;
   Timestamp? timestamp;
+  List<String>? likes;
 
   Car(
       {this.id,
@@ -25,6 +26,7 @@ class Car {
       required this.kota,
       required this.noTelp,
       required this.negara,
+      this.likes,
       this.imageUrl,
       this.timestamp});
 }
