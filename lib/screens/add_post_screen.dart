@@ -72,7 +72,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Berhasil upload!')),
+            const SnackBar(content: Text('Berhasil DiUpload!')),
           );
         }
 
