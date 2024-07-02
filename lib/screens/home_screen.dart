@@ -2,7 +2,6 @@ import 'package:car_find/screens/detail_screen.dart';
 import 'package:car_find/services/database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:car_find/screens/add_post_screen.dart';
 import 'package:car_find/screens/sign_in_screen.dart';
 
