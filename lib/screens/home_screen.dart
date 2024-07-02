@@ -20,9 +20,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('HOME'),
         backgroundColor: Colors.black,
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24.0),
+        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 25.0),
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
               );
             default:
               return ListView(
-                padding: const EdgeInsets.only(bottom: 80),
+                padding: const EdgeInsets.only(bottom: 85),
                 children: snapshot.data!.map((document) {
                   return Card(
                     child: Column(
