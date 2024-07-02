@@ -141,7 +141,42 @@ class _AddPostScreenState extends State<AddPostScreen> {
               const SizedBox(height: 18.0),
               //
               //
-              
+              MyTextField(
+                  controller: _namaController,
+                  hintText: 'Nama',
+                  obscureText: false),
+              MyTextField(
+                  controller: _brandController,
+                  hintText: 'Brand',
+                  obscureText: false),
+              MyTextField(
+                  controller: _modelController,
+                  hintText: 'Model',
+                  obscureText: false),
+              MyTextField(
+                  controller: _tahunController,
+                  hintText: 'Tahun',
+                  obscureText: false),
+              MyTextField(
+                  controller: _warnaController,
+                  hintText: 'Warna',
+                  obscureText: false),
+              MyTextField(
+                  controller: _jalanController,
+                  hintText: 'Jalan Dealer',
+                  obscureText: false),
+              MyTextField(
+                  controller: _kotaController,
+                  hintText: 'Kota Dealer',
+                  obscureText: false),
+              MyTextField(
+                  controller: _noTelpController,
+                  hintText: 'Nomor Telepon',
+                  obscureText: false),
+              MyTextField(
+                  controller: _negaraController,
+                  hintText: 'Negara',
+                  obscureText: false),
               //
               //
               const SizedBox(height: 64.0),
